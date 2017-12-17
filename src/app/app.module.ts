@@ -11,6 +11,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { PostProvider } from "../providers/post/post";
 import { PostPage } from "../pages/post/post";
+import { TodoService } from "../providers/todos/todo-service";
 
 @NgModule({
   declarations: [MyApp, HomePage, ListPage, PostPage],
@@ -21,7 +22,8 @@ import { PostPage } from "../pages/post/post";
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PostProvider
+    PostProvider,
+    TodoService
   ]
 })
 export class AppModule {}

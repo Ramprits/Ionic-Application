@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/delay";
+import "rxjs/add/operator/take";
 import "rxjs/add/observable/throw";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
@@ -21,7 +22,7 @@ export class PostProvider {
   getPosts(): Observable<any[] | TrackerError> {
     return this.http
       .get<any[]>(`https://jsonplaceholder.typicode.com/photos`)
-      .delay(1000)
+      .take(10)
       .catch(this.handleError);
   }
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {
