@@ -12,18 +12,21 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { PostProvider } from "../providers/post/post";
 import { PostPage } from "../pages/post/post";
 import { TodoService } from "../providers/todos/todo-service";
+import { ProductProvider } from "../providers/product/product";
+import { ProductPage } from "../pages/product/product";
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage, PostPage],
+  declarations: [MyApp, HomePage, ListPage, PostPage, ProductPage],
   imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, PostPage],
+  entryComponents: [MyApp, HomePage, ListPage, PostPage, ProductPage],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PostProvider,
-    TodoService
+    TodoService,
+    ProductProvider
   ]
 })
 export class AppModule {}
