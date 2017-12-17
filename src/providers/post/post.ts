@@ -22,7 +22,6 @@ export class PostProvider {
   getPosts(): Observable<any[] | TrackerError> {
     return this.http
       .get<any[]>(`https://jsonplaceholder.typicode.com/photos`)
-      .take(10)
       .catch(this.handleError);
   }
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {

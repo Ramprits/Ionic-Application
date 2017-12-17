@@ -1,17 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
+import { TrackerError } from "../../shared/tracker.error";
 
-/*
-  Generated class for the ProductProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class ProductProvider {
-
   constructor(public http: HttpClient) {
-    console.log('Hello ProductProvider Provider');
+    console.log("Hello ProductProvider Provider");
   }
-
+  getProducts(): Observable<any[] | TrackerError> {
+    return this.http
+      .get<any[]>(`./assets/jsonData/data.json`)
+      .catch(this.handleError);
+  }
+  private handleError(error: HttpErrorResponse): Observable<TrackerError> {
+    const dataError = new TrackerError();
+    dataError.errorNumber = error.status;
+    dataError.message = error.statusText;
+    dataError.friendlyMessage = "An error occurred retrieving data.";
+    return Observable.throw(dataError);
+  }
 }
