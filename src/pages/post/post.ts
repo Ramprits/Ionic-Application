@@ -26,7 +26,7 @@ export class PostPage implements OnInit {
     );
   }
   goToHome() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad PostPage");

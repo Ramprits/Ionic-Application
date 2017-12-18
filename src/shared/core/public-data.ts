@@ -3,8 +3,7 @@ import {
   state,
   style,
   transition,
-  animate,
-  keyframes
+  animate
 } from "@angular/animations";
 
 export const beforeUrl = "";

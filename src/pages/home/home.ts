@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NavController } from "ionic-angular";
+import { NavController, LoadingController } from "ionic-angular";
 import { Title } from "@angular/platform-browser";
 import { PostPage } from "../post/post";
 import { HomeProvider } from "../../providers/home/home";
@@ -14,18 +14,40 @@ import { pageAnimation } from "../../shared/core/public-data";
 export class HomePage implements OnInit {
   categories: any[] | TrackerError;
   products: any[];
+  loading = true;
   constructor(
     public navCtrl: NavController,
     private title: Title,
-    private homeService: HomeProvider
+    private homeService: HomeProvider,
+    public loadingCtrl: LoadingController
   ) {
     this.title.setTitle("Home page");
   }
   ngOnInit() {
-    this.homeService.getCategories().subscribe(category => {
-      this.categories = category;
-    });
+    this.loading = true;
+    this.homeService.getCategories().subscribe(
+      category => {
+        this.categories = category;
+      },
+      err => {
+        console.log(err);
+      },
+      () => {
+        this.loading = false;
+      }
+    );
   }
+
+  presentLoading() {
+    this.loadingCtrl
+      .create({
+        content: "Please wait...",
+        duration: 3000,
+        dismissOnPageChange: true
+      })
+      .present();
+  }
+
   ionViewDidLoad() {}
   GoToPostPage() {
     this.navCtrl.push(PostPage);

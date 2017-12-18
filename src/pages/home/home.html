@@ -11,7 +11,7 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
+  <ion-spinner name="dots" *ngIf="loading" style="margin-left: 50%;" color="twitter"></ion-spinner>
   <ion-card *ngFor="let cat of categories">
     <img src="../../assets/images/{{cat.imageUrl}}" />
   </ion-card>

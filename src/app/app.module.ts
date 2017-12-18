@@ -15,9 +15,18 @@ import { TodoService } from "../providers/todos/todo-service";
 import { ProductProvider } from "../providers/product/product";
 import { ProductPage } from "../pages/product/product";
 import { HomeProvider } from "../providers/home/home";
+import { TrainingProvider } from "../providers/training/training";
+import { TrainingPage } from "../pages/training/training";
 
 @NgModule({
-  declarations: [MyApp, HomePage, ListPage, PostPage, ProductPage],
+  declarations: [
+    MyApp,
+    HomePage,
+    ListPage,
+    PostPage,
+    ProductPage,
+    TrainingPage
+  ],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
@@ -25,7 +34,14 @@ import { HomeProvider } from "../providers/home/home";
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, ListPage, PostPage, ProductPage],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    ListPage,
+    PostPage,
+    ProductPage,
+    TrainingPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -33,7 +49,8 @@ import { HomeProvider } from "../providers/home/home";
     PostProvider,
     TodoService,
     ProductProvider,
-    HomeProvider
+    HomeProvider,
+    TrainingProvider
   ]
 })
 export class AppModule {}
