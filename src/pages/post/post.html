@@ -2,23 +2,15 @@
   <ion-navbar>
     <ion-title>Post</ion-title>
     <ion-buttons end>
-      <button ion-button>
-        <ion-icon name="add"></ion-icon>
+      <button ion-button (click)="goToHome()">
+        Back
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content class="cards-bg">
-  <!-- <ion-card *ngFor="let post of posts">
-    <ion-card-content>
-      <ion-icon name="cafe" item-start></ion-icon>
-      <span style="margin-top:15px;">{{post.title}}</span>
-    </ion-card-content>
-  </ion-card> -->
-
   <ion-list>
-    <ion-item-sliding *ngFor="let post of posts">
-
+    <ion-item-sliding *ngFor="let post of (posts ? posts.slice(0,10): []); let i = index">
       <ion-item-options side="left">
         <button ion-button>
           <ion-icon name="create"></ion-icon>

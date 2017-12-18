@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { PostProvider } from "../../providers/post/post";
 import { TrackerError } from "../../shared/tracker.error";
+import { HomePage } from "../home/home";
 
 @Component({
   selector: "page-post",
@@ -23,6 +24,9 @@ export class PostPage implements OnInit {
         console.log("Server problem");
       }
     );
+  }
+  goToHome() {
+    this.navCtrl.push(HomePage);
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad PostPage");

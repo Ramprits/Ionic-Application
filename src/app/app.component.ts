@@ -25,10 +25,10 @@ export class MyApp {
   ) {
     this.initializeApp();
     this.pages = [
-      { title: "Home", component: HomePage },
-      { title: "List", component: ListPage },
-      { title: "Post", component: PostPage },
-      { title: "Products", component: ProductPage }
+      { title: "Dashboard", component: HomePage },
+      { title: "Training Catalogue", component: ListPage },
+      { title: "Need", component: PostPage },
+      { title: "My Training List", component: ProductPage }
     ];
   }
 

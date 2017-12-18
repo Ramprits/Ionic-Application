@@ -8,6 +8,10 @@
 </ion-header>
 
 <ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ion-card *ngFor="let cat of categories">
     <img src="../../assets/images/{{cat.imageUrl}}" />
   </ion-card>
