@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar color="twitter">
+    <ion-title>Best Seller</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let product of bestSeller">
+    <img [src]="product.image" />
+  </ion-card>
+</ion-content>

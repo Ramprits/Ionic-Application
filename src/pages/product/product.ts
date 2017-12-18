@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ProductProvider } from "../../providers/product/product";
-import { TrackerError } from "../../shared/tracker.error";
 import { pageAnimation } from "../../shared/core/public-data";
 import { HomePage } from "../home/home";
+import { ProductDetailPage } from "../product-detail/product-detail";
 
 @Component({
   selector: "page-product",
@@ -11,7 +11,7 @@ import { HomePage } from "../home/home";
   animations: [pageAnimation]
 })
 export class ProductPage implements OnInit {
-  products: any[] | TrackerError;
+  public products = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -25,4 +25,9 @@ export class ProductPage implements OnInit {
     this.navCtrl.setRoot(HomePage);
   }
   ngOnInit() {}
+  goToProductDetail(product) {
+    this.navCtrl.push(ProductDetailPage, {
+      productDetails: product
+    });
+  }
 }

@@ -17,6 +17,8 @@ import { ProductPage } from "../pages/product/product";
 import { HomeProvider } from "../providers/home/home";
 import { TrainingProvider } from "../providers/training/training";
 import { TrainingPage } from "../pages/training/training";
+import { ProductDetailPage } from "../pages/product-detail/product-detail";
+import { BestSellerPage } from "../pages/best-seller/best-seller";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TrainingPage } from "../pages/training/training";
     ListPage,
     PostPage,
     ProductPage,
-    TrainingPage
+    TrainingPage,
+    ProductDetailPage,
+    BestSellerPage
   ],
   imports: [
     HttpClientModule,
@@ -40,7 +44,9 @@ import { TrainingPage } from "../pages/training/training";
     ListPage,
     PostPage,
     ProductPage,
-    TrainingPage
+    TrainingPage,
+    ProductDetailPage,
+    BestSellerPage
   ],
   providers: [
     StatusBar,

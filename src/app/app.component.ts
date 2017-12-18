@@ -6,6 +6,7 @@ import { HomePage } from "../pages/home/home";
 import { PostPage } from "../pages/post/post";
 import { ProductPage } from "../pages/product/product";
 import { TrainingPage } from "../pages/training/training";
+import { BestSellerPage } from "../pages/best-seller/best-seller";
 
 @Component({
   templateUrl: "app.html"
@@ -26,8 +27,9 @@ export class MyApp {
     this.pages = [
       { title: "Dashboard", component: HomePage },
       { title: "Training Catalogue", component: TrainingPage },
-      { title: "Need", component: PostPage },
-      { title: "My Training List", component: ProductPage }
+      { title: "Post", component: PostPage },
+      { title: "Product", component: ProductPage },
+      { title: "Best Seller", component: BestSellerPage }
     ];
   }
 
