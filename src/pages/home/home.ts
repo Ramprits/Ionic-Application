@@ -1,30 +1,32 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NavController } from "ionic-angular";
 import { Title } from "@angular/platform-browser";
 import { PostPage } from "../post/post";
-import { ProductProvider } from "../../providers/product/product";
+import { HomeProvider } from "../../providers/home/home";
+import { TrackerError } from "../../shared/tracker.error";
+import { pageAnimation } from "../../shared/core/public-data";
 
 @Component({
   selector: "page-home",
-  templateUrl: "home.html"
+  templateUrl: "home.html",
+  animations: [pageAnimation]
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  categories: any[] | TrackerError;
   products: any[];
   constructor(
     public navCtrl: NavController,
     private title: Title,
-    private services: ProductProvider
+    private homeService: HomeProvider
   ) {
     this.title.setTitle("Home page");
   }
-  showAlert() {
-    alert("Welcome to the Ionic");
+  ngOnInit() {
+    this.homeService.getCategories().subscribe(category => {
+      this.categories = category;
+    });
   }
-
-  ionViewDidLoad() {
-    this.services.getProducts().subscribe(response => console.log(response));
-  }
-
+  ionViewDidLoad() {}
   GoToPostPage() {
     this.navCtrl.push(PostPage);
   }

@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { HttpClientModule } from "@angular/common/http";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { ListPage } from "../pages/list/list";
@@ -14,10 +14,16 @@ import { PostPage } from "../pages/post/post";
 import { TodoService } from "../providers/todos/todo-service";
 import { ProductProvider } from "../providers/product/product";
 import { ProductPage } from "../pages/product/product";
+import { HomeProvider } from "../providers/home/home";
 
 @NgModule({
   declarations: [MyApp, HomePage, ListPage, PostPage, ProductPage],
-  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [
+    HttpClientModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    IonicModule.forRoot(MyApp)
+  ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, ListPage, PostPage, ProductPage],
   providers: [
@@ -26,7 +32,8 @@ import { ProductPage } from "../pages/product/product";
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PostProvider,
     TodoService,
-    ProductProvider
+    ProductProvider,
+    HomeProvider
   ]
 })
 export class AppModule {}

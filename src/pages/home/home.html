@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="twitter">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,14 +7,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <img src="assets/images/WCM.png" />
-  <hr>
-  <img src="assets/images/Communication.jpg" />
-  <hr>
-  <img src="assets/images/product.jpg" />
-  <hr>
-  <img src="assets/images/Other.jpg" />
-  <hr>
-
+<ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
+  <ion-card *ngFor="let cat of categories">
+    <img src="../../assets/images/{{cat.imageUrl}}" />
+  </ion-card>
 </ion-content>

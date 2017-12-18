@@ -3,7 +3,7 @@
     <ion-title>Product List</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
   <ion-card *ngFor="let item of products">
     <img [src]="item.image" />
   </ion-card>
