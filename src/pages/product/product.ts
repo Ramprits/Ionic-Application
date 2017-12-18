@@ -3,6 +3,7 @@ import { NavController, NavParams } from "ionic-angular";
 import { ProductProvider } from "../../providers/product/product";
 import { TrackerError } from "../../shared/tracker.error";
 import { pageAnimation } from "../../shared/core/public-data";
+import { HomePage } from "../home/home";
 
 @Component({
   selector: "page-product",
@@ -20,6 +21,8 @@ export class ProductPage implements OnInit {
       this.products = product;
     });
   }
-
+  goToHome() {
+    this.navCtrl.setRoot(HomePage);
+  }
   ngOnInit() {}
 }

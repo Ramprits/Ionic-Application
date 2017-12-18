@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
-import {  NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams } from "ionic-angular";
 import { TrainingProvider } from "../../providers/training/training";
+import { HomePage } from "../home/home";
 
 @Component({
   selector: "page-training",
@@ -18,5 +19,8 @@ export class TrainingPage {
       .getTrainings()
       .subscribe(response => console.log(response));
     console.log("ionViewDidLoad TrainingPage");
+  }
+  goToHome() {
+    this.navCtrl.setRoot(HomePage);
   }
 }

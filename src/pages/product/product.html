@@ -1,6 +1,11 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="twitter">
     <ion-title>Product List</ion-title>
+    <ion-buttons end small>
+      <button ion-button (click)="goToHome()">
+        Back
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
