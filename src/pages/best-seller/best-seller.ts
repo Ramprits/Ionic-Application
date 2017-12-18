@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ProductProvider } from "../../providers/product/product";
+import { HomePage } from "../home/home";
 
 @Component({
   selector: "page-best-seller",
@@ -20,5 +21,9 @@ export class BestSellerPage {
         products => products.bestSeller == true
       );
     });
+  }
+
+  goToHome() {
+    this.navCtrl.setRoot(HomePage);
   }
 }
