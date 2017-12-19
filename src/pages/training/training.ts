@@ -3,10 +3,12 @@ import { NavController, NavParams } from "ionic-angular";
 import { TrainingProvider } from "../../providers/training/training";
 import { HomePage } from "../home/home";
 import { TrainingDetailPage } from '../training-detail/training-detail';
+import { pageAnimation } from "../../shared/core/public-data";
 
 @Component({
   selector: "page-training",
-  templateUrl: "training.html"
+  templateUrl: "training.html",
+  animations: [pageAnimation]
 })
 export class TrainingPage {
   trainings = [];
@@ -15,9 +17,7 @@ export class TrainingPage {
     public navParams: NavParams,
     private trainingService: TrainingProvider
   ) {
-    for (let i = 0; i < 30; i++) {
-      this.trainings.push(this.trainings.length);
-    }
+
   }
 
   ionViewDidLoad() {
@@ -29,18 +29,7 @@ export class TrainingPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
 
-    setTimeout(() => {
-      for (let i = 0; i < 30; i++) {
-        this.trainings.push(this.trainings.length);
-      }
-
-      console.log('Async operation has ended');
-      infiniteScroll.complete();
-    }, 500);
-  }
   itemSelected(traning) {
     this.navCtrl.push(TrainingDetailPage, {
       selectedTraining: traning

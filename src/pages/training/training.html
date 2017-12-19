@@ -8,13 +8,9 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <ion-list inset>
-    <button ion-item *ngFor="let traning of trainings" (click)="itemSelected(traning)">
-      {{ traning.Name }}
-    </button>
+<ion-content padding class="dialog-content-inherit card-background-page" [@pageAnimation]="'in'">
+  <ion-list>
+    <ion-item *ngFor="let traning of (trainings ? trainings.slice(0,15): []); let i = index" (click)="itemSelected(traning)">
+      {{ traning.Name }}</ion-item>
   </ion-list>
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
 </ion-content>
