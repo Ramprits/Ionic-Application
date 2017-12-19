@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Filter Model</ion-title>
+    <ion-buttons end small>
+      <button ion-button (click)="goToHome()">
+        Close
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Female</ion-label>
+      <ion-toggle [(ngModel)]="selectedFemale"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Male</ion-label>
+      <ion-toggle [(ngModel)]="selectedMale"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

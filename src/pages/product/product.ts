@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, ModalController } from "ionic-angular";
 import { ProductProvider } from "../../providers/product/product";
 import { pageAnimation } from "../../shared/core/public-data";
 import { HomePage } from "../home/home";
 import { ProductDetailPage } from "../product-detail/product-detail";
+import { FilterModelPage } from "../filter-model/filter-model";
 
 @Component({
   selector: "page-product",
@@ -15,7 +16,8 @@ export class ProductPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private services: ProductProvider
+    private services: ProductProvider,
+    private fileterModel: ModalController
   ) {
     this.services.getProducts().subscribe(product => {
       this.products = product;
@@ -29,5 +31,9 @@ export class ProductPage implements OnInit {
     this.navCtrl.push(ProductDetailPage, {
       productDetails: product
     });
+  }
+  openModel() {
+    let filter = this.fileterModel.create(FilterModelPage);
+    filter.present();
   }
 }

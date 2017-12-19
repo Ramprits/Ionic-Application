@@ -19,8 +19,10 @@ import { TrainingProvider } from "../providers/training/training";
 import { TrainingPage } from "../pages/training/training";
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
 import { BestSellerPage } from "../pages/best-seller/best-seller";
-import { TrainingDetailPage } from '../pages/training-detail/training-detail';
-import { HomeDetailPage } from '../pages/home-detail/home-detail';
+import { TrainingDetailPage } from "../pages/training-detail/training-detail";
+import { HomeDetailPage } from "../pages/home-detail/home-detail";
+import { FilterModelPage } from "../pages/filter-model/filter-model";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { HomeDetailPage } from '../pages/home-detail/home-detail';
     ProductDetailPage,
     BestSellerPage,
     TrainingDetailPage,
-    HomeDetailPage
+    HomeDetailPage,
+    FilterModelPage
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
@@ -52,7 +56,8 @@ import { HomeDetailPage } from '../pages/home-detail/home-detail';
     ProductDetailPage,
     BestSellerPage,
     TrainingDetailPage,
-    HomeDetailPage
+    HomeDetailPage,
+    FilterModelPage
   ],
   providers: [
     StatusBar,
@@ -65,4 +70,4 @@ import { HomeDetailPage } from '../pages/home-detail/home-detail';
     TrainingProvider
   ]
 })
-export class AppModule { }
+export class AppModule {}

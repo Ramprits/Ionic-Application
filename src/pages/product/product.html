@@ -12,4 +12,9 @@
   <ion-card *ngFor="let product of products" (click)="goToProductDetail(product)">
     <img [src]="product.image" />
   </ion-card>
+  <ion-fab right bottom (click)="openModel()">
+    <button ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 </ion-content>
