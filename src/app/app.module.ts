@@ -20,6 +20,7 @@ import { TrainingPage } from "../pages/training/training";
 import { ProductDetailPage } from "../pages/product-detail/product-detail";
 import { BestSellerPage } from "../pages/best-seller/best-seller";
 import { TrainingDetailPage } from '../pages/training-detail/training-detail';
+import { HomeDetailPage } from '../pages/home-detail/home-detail';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TrainingDetailPage } from '../pages/training-detail/training-detail';
     TrainingPage,
     ProductDetailPage,
     BestSellerPage,
-    TrainingDetailPage
+    TrainingDetailPage,
+    HomeDetailPage
   ],
   imports: [
     HttpClientModule,
@@ -49,7 +51,8 @@ import { TrainingDetailPage } from '../pages/training-detail/training-detail';
     TrainingPage,
     ProductDetailPage,
     BestSellerPage,
-    TrainingDetailPage
+    TrainingDetailPage,
+    HomeDetailPage
   ],
   providers: [
     StatusBar,

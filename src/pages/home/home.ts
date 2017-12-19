@@ -5,6 +5,7 @@ import { PostPage } from "../post/post";
 import { HomeProvider } from "../../providers/home/home";
 import { TrackerError } from "../../shared/tracker.error";
 import { pageAnimation } from "../../shared/core/public-data";
+import { HomeDetailPage } from '../home-detail/home-detail';
 
 @Component({
   selector: "page-home",
@@ -48,7 +49,7 @@ export class HomePage implements OnInit {
       .present();
   }
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() { }
   GoToPostPage() {
     this.navCtrl.push(PostPage);
   }
@@ -60,5 +61,11 @@ export class HomePage implements OnInit {
       console.log("Async operation has ended");
       refresher.complete();
     }, 2000);
+  }
+
+  itemSelected(cat) {
+    this.navCtrl.push(HomeDetailPage, {
+      selectedHome: cat
+    })
   }
 }

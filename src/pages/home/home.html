@@ -12,7 +12,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <ion-spinner name="dots" *ngIf="loading" style="margin-left: 50%;" color="twitter"></ion-spinner>
-  <ion-card *ngFor="let cat of categories">
+  <ion-card *ngFor="let cat of categories" (click)="itemSelected(cat)">
     <img src="../../assets/images/{{cat.imageUrl}}" />
     <ion-label color="primary" style="text-align: center;">{{cat.name}}</ion-label>
   </ion-card>
