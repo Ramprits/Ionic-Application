@@ -8,9 +8,9 @@ import { pageAnimation } from "../../shared/core/public-data";
   animations: [pageAnimation]
 })
 export class ProductDetailPage {
-  publicproductDetails = {};
+  productDetails = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.publicproductDetails = this.navParams.get("productDetails");
+    this.productDetails = this.navParams.get("productDetails");
   }
   ionViewDidLoad() {
     console.log("ionViewDidLoad ProductDetailPage");

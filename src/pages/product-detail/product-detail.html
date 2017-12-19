@@ -5,8 +5,7 @@
 </ion-header>
 <ion-content padding class="dialog-content-inherit card-background-page" [@pageAnimation]="'in'">
   <ion-card>
-    <img [src]="publicproductDetails.image" />
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
+    <img [src]="productDetails.image" />
+    <div class="card-title">{{productDetails.name}}</div>
   </ion-card>
 </ion-content>

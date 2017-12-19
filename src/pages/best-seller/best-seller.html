@@ -12,11 +12,16 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
   <ion-slides pager>
     <ion-slide *ngFor="let product of bestSeller">
       <ion-card>
-        <img [src]="product.image" />
+        <ion-card-header>
+          {{product.name}}
+        </ion-card-header>
+        <ion-card-content>
+          <img [src]="product.image" style="background-color: white;" />
+        </ion-card-content>
       </ion-card>
     </ion-slide>
   </ion-slides>
