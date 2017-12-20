@@ -4,7 +4,7 @@
     <ion-title>Filter Model</ion-title>
     <ion-buttons end small>
       <button ion-button (click)="goToHome()">
-        Close
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -12,16 +12,15 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-toggle checked=""></ion-toggle>
+  <!-- <ion-list>
     <ion-item>
       <ion-label>Female</ion-label>
       <ion-toggle [(ngModel)]="selectedFemale"></ion-toggle>
     </ion-item>
-  </ion-list>
-  <ion-list>
     <ion-item>
       <ion-label>Male</ion-label>
       <ion-toggle [(ngModel)]="selectedMale"></ion-toggle>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content>

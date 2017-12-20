@@ -4,8 +4,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <ion-list>
+  <ion-list>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-input type="text" formControlName="firstName" placeholder="First name..."></ion-input>
       </ion-item>
@@ -18,8 +18,7 @@
       <ion-item>
         <ion-input type="text" formControlName="mobile" placeholder="Mobile..."></ion-input>
       </ion-item>
-    </ion-list>
-    <br>
-    <button ion-button outline float-right type="submit" [disabled]="!signUpForm.valid">Register</button>
-  </form>
+      <button ion-button outline float-right type="submit" [disabled]="!signUpForm.valid">Register</button>
+    </form>
+  </ion-list>
 </ion-content>

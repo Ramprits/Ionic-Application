@@ -8,16 +8,17 @@
 
 
 <ion-content padding>
-  <form [formGroup]="todo" (ngSubmit)="onSubmit()">
-    <ion-list>
+  <ion-list>
+    <form [formGroup]="todo" (ngSubmit)="onSubmit()">
       <ion-item>
         <ion-input type="text" formControlName="email" placeholder="Email addess..."></ion-input>
       </ion-item>
       <ion-item>
         <ion-input type="password" formControlName="password" placeholder="Password..."></ion-input>
       </ion-item>
-    </ion-list>
-    <button ion-button outline float-right type="submit" [disabled]="!todo.valid">Login</button>
-    <button ion-button outline float-right type="button" (click)="signUp()" >Sign Up</button>
-  </form>
+      <button ion-button outline float-right type="submit" [disabled]="!todo.valid">Login</button>
+      <button ion-button outline float-right type="button" (click)="signUp()">Sign Up</button>
+    </form>
+  </ion-list>
+
 </ion-content>
