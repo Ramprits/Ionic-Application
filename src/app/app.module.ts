@@ -26,6 +26,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { CampaignProvider } from '../providers/campaign/campaign';
+import { CampaignPage } from '../pages/campaign/campaign';
+import { AddCampaignPage } from '../pages/add-campaign/add-campaign';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { SignupPage } from '../pages/signup/signup';
     HomeDetailPage,
     FilterModelPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    CampaignPage,
+    AddCampaignPage
   ],
   imports: [
     HttpClientModule,
@@ -65,7 +70,9 @@ import { SignupPage } from '../pages/signup/signup';
     HomeDetailPage,
     FilterModelPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    CampaignPage,
+    AddCampaignPage
   ],
   providers: [
     StatusBar,
@@ -76,7 +83,8 @@ import { SignupPage } from '../pages/signup/signup';
     ProductProvider,
     HomeProvider,
     TrainingProvider,
-    AuthProvider
+    AuthProvider,
+    CampaignProvider
   ]
 })
 export class AppModule { }

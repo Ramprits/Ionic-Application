@@ -8,8 +8,11 @@
     <ion-card-header>
       {{selectedTraining.Name}}
     </ion-card-header>
-    <ion-card-content>
-      {{selectedTraining.EducationalObjectives}}
+    <ion-card-content *ngIf="selectedTraining.ConcernedPublic || selectedTraining.EducationalObjectives">
+      <hr>
+      <p>{{selectedTraining.ConcernedPublic}}</p>
+      <hr>
+      <p>{{selectedTraining.EducationalObjectives}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
