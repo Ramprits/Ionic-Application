@@ -29,62 +29,13 @@ import { SignupPage } from '../pages/signup/signup';
 import { CampaignProvider } from '../providers/campaign/campaign';
 import { CampaignPage } from '../pages/campaign/campaign';
 import { AddCampaignPage } from '../pages/add-campaign/add-campaign';
+import { CampaignDetailPage } from '../pages/campaign-detail/campaign-detail';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ListPage,
-    PostPage,
-    ProductPage,
-    TrainingPage,
-    ProductDetailPage,
-    BestSellerPage,
-    TrainingDetailPage,
-    HomeDetailPage,
-    FilterModelPage,
-    LoginPage,
-    SignupPage,
-    CampaignPage,
-    AddCampaignPage
-  ],
-  imports: [
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    IonicModule.forRoot(MyApp)
-  ],
+  declarations: [MyApp, HomePage, ListPage, PostPage, ProductPage, TrainingPage, ProductDetailPage, BestSellerPage, TrainingDetailPage, HomeDetailPage, FilterModelPage, LoginPage, SignupPage, CampaignPage, AddCampaignPage, CampaignDetailPage],
+  imports: [HttpClientModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    ListPage,
-    PostPage,
-    ProductPage,
-    TrainingPage,
-    ProductDetailPage,
-    BestSellerPage,
-    TrainingDetailPage,
-    HomeDetailPage,
-    FilterModelPage,
-    LoginPage,
-    SignupPage,
-    CampaignPage,
-    AddCampaignPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    PostProvider,
-    TodoService,
-    ProductProvider,
-    HomeProvider,
-    TrainingProvider,
-    AuthProvider,
-    CampaignProvider
-  ]
+  entryComponents: [MyApp, HomePage, ListPage, PostPage, ProductPage, TrainingPage, ProductDetailPage, BestSellerPage, TrainingDetailPage, HomeDetailPage, FilterModelPage, LoginPage, SignupPage, CampaignPage, AddCampaignPage, CampaignDetailPage],
+  providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, PostProvider, TodoService, ProductProvider, HomeProvider, TrainingProvider, AuthProvider, CampaignProvider]
 })
 export class AppModule { }

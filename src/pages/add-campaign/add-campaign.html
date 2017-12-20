@@ -23,7 +23,7 @@
       <ion-item>
         <ion-input type="text" formControlName="maximumWishes" placeholder="Maximum Wishes..."></ion-input>
       </ion-item>
-      <ion-grid>
+      <ion-grid padding>
         <ion-row>
           <ion-col col-6>Active</ion-col>
           <ion-col col-6>
@@ -48,7 +48,7 @@
         </ion-row>
       </ion-grid>
       <button ion-button outline float-right type="submit" [disabled]="!AddCampaign.valid">Save</button>
-      <button ion-button outline float-right type="button" (click)="goToHome()">Cancel</button>
+      <button ion-button color="danger" clear float-right type="button" (click)="goToHome()">Cancel</button>
     </form>
   </ion-list>
 </ion-content>

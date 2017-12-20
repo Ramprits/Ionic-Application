@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title>Campaign Detail</ion-title>
+    <ion-buttons end small>
+      <button ion-button (click)="goToHome()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header color="primary">
+      {{selectedCampaign.name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{selectedCampaign.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
