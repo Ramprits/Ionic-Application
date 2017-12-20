@@ -48,8 +48,6 @@ export class HomePage implements OnInit {
       })
       .present();
   }
-
-  ionViewDidLoad() { }
   GoToPostPage() {
     this.navCtrl.push(PostPage);
   }

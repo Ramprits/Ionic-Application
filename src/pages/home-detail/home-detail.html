@@ -6,13 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>homeDetail</ion-title>
+  <ion-navbar color="twitter">
+    <ion-title>Home Detail</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding class="dialog-content-inherit" [@pageAnimation]="'in'">
-  {{selectedHome.name}}
+  <ion-card>
+    <img src="../../assets/images/{{selectedHome.imageUrl}}" />
+    <ion-label color="primary" style="text-align: center;">{{selectedHome.name}}</ion-label>
+  </ion-card>
 </ion-content>

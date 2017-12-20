@@ -22,7 +22,10 @@ import { BestSellerPage } from "../pages/best-seller/best-seller";
 import { TrainingDetailPage } from "../pages/training-detail/training-detail";
 import { HomeDetailPage } from "../pages/home-detail/home-detail";
 import { FilterModelPage } from "../pages/filter-model/filter-model";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthProvider } from '../providers/auth/auth';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -36,11 +39,14 @@ import { FormsModule } from "@angular/forms";
     BestSellerPage,
     TrainingDetailPage,
     HomeDetailPage,
-    FilterModelPage
+    FilterModelPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
@@ -57,7 +63,9 @@ import { FormsModule } from "@angular/forms";
     BestSellerPage,
     TrainingDetailPage,
     HomeDetailPage,
-    FilterModelPage
+    FilterModelPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
@@ -67,7 +75,8 @@ import { FormsModule } from "@angular/forms";
     TodoService,
     ProductProvider,
     HomeProvider,
-    TrainingProvider
+    TrainingProvider,
+    AuthProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

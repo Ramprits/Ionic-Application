@@ -7,6 +7,7 @@ import { PostPage } from "../pages/post/post";
 import { ProductPage } from "../pages/product/product";
 import { TrainingPage } from "../pages/training/training";
 import { BestSellerPage } from "../pages/best-seller/best-seller";
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: "app.html"
@@ -29,7 +30,8 @@ export class MyApp {
       { title: "Training Catalogue", component: TrainingPage },
       { title: "Post", component: PostPage },
       { title: "Product", component: ProductPage },
-      { title: "Best Seller", component: BestSellerPage }
+      { title: "Best Seller", component: BestSellerPage },
+      { title: "login", component: LoginPage }
     ];
   }
 
