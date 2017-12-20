@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { CampaignProvider } from '../../providers/campaign/campaign';
 import { HomePage } from '../home/home';
 import { AddCampaignPage } from '../add-campaign/add-campaign';
+import { Campaign } from '../../shared/Models/campaign.model';
 
 @IonicPage()
 @Component({
@@ -10,7 +11,7 @@ import { AddCampaignPage } from '../add-campaign/add-campaign';
   templateUrl: 'campaign.html',
 })
 export class CampaignPage implements OnInit {
-  campaigns: any[];
+  campaigns: Campaign[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private campaignService: CampaignProvider,
     private fileterModel: ModalController) {
   }
