@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <form id="login-form1" [formGroup]="todo" (ngSubmit)="onSubmit()">
+  <form id="login-form1" [formGroup]="loginForm" (ngSubmit)="auth.login(loginForm.value)">
     <ion-item id="loginInputEmail">
       <ion-label>
         Email
@@ -18,7 +18,7 @@
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <div class="spacer" style="height:40px;" id="loginspacer"></div>
-    <button id="login" type="submit" ion-button color="stable" block [disabled]="!todo.valid">
+    <button id="login" type="submit" ion-button color="stable" block [disabled]="!loginForm.valid">
       Log in
     </button>
     <button id="createAccount" type="button" ion-button color="positive" block (click)="createAccount()">

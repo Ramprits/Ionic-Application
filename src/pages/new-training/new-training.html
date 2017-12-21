@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title>New Training</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let newTraining of newTrainings" (click)="selectedTraining(newTraining)">
+      {{newTraining.name}}
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom (click)="openModel()">
+    <button ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
