@@ -1,24 +1,28 @@
 <ion-header>
-
   <ion-navbar color="twitter">
     <ion-title>login</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
-  <ion-list>
-    <form [formGroup]="todo" (ngSubmit)="onSubmit()">
-      <ion-item>
-        <ion-input type="text" formControlName="email" placeholder="Email addess..."></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" formControlName="password" placeholder="Password..."></ion-input>
-      </ion-item>
-      <button ion-button outline float-right type="submit" [disabled]="!todo.valid">Login</button>
-      <button ion-button outline float-right type="button" (click)="signUp()">Sign Up</button>
-    </form>
-  </ion-list>
-
+  <form id="login-form1" [formGroup]="todo" (ngSubmit)="onSubmit()">
+    <ion-item id="loginInputEmail">
+      <ion-label>
+        Email
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item id="loginInputPassword">
+      <ion-label>
+        Password
+      </ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="spacer" style="height:40px;" id="loginspacer"></div>
+    <button id="login" type="submit" ion-button color="stable" block [disabled]="!todo.valid">
+      Log in
+    </button>
+    <button id="createAccount" type="button" ion-button color="positive" block (click)="createAccount()">
+      Or create an account
+    </button>
+  </form>
 </ion-content>

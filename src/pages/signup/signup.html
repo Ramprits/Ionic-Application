@@ -4,21 +4,24 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-list>
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-      <ion-item>
-        <ion-input type="text" formControlName="firstName" placeholder="First name..."></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="text" formControlName="lastName" placeholder="Last name..."></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="text" formControlName="email" placeholder="Email addess..."></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="text" formControlName="mobile" placeholder="Mobile..."></ion-input>
-      </ion-item>
-      <button ion-button outline float-right type="submit" [disabled]="!signUpForm.valid">Register</button>
-    </form>
-  </ion-list>
+  <form id="signup-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <ion-item id="signup-inputfirstName">
+      <ion-input type="text" formControlName="firstName" placeholder="You must enter first name.."></ion-input>
+    </ion-item>
+    <ion-item id="signup-inputlastName">
+      <ion-input type="text" formControlName="lastName" placeholder="You must enter last name.."></ion-input>
+    </ion-item>
+    <ion-item id="signup-inputmobile">
+      <ion-input type="text" formControlName="mobile" placeholder="You must enter mobile number" name="mobile"></ion-input>
+    </ion-item>
+    <ion-item id="signup-inputemail">
+      <ion-input type="email" formControlName="email" placeholder="You must enter email"></ion-input>
+    </ion-item>
+    <ion-item id="signup-input5">
+      <ion-input type="password" placeholder="You must enter password"></ion-input>
+    </ion-item>
+    <button id="signup-button3" [disabled]="!signUpForm.valid" type="submit" ion-button outline color="positive" full style="font-weight:500;color:#363750;">
+      Sign up
+    </button>
+  </form>
 </ion-content>

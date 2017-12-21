@@ -21,7 +21,7 @@ export class LoginPage {
     console.log(this.todo.value)
     this.navCtrl.setRoot(HomePage);
   }
-  signUp() {
+  createAccount() {
     this.navCtrl.push(SignupPage);
   }
 }
