@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AddNewTrainingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NewTrainingProvider } from '../../providers/new-training/new-training';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NewTrainingPage } from '../new-training/new-training';
+import { Toast } from '@ionic-native/toast';
 
 @IonicPage()
 @Component({
@@ -14,12 +11,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-new-training.html',
 })
 export class AddNewTrainingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  technologies: any[];
+  private NewForm: FormGroup;
+  public msg = "";
+  constructor(
+    private toastct: Toast,
+    private fb: FormBuilder,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private newTrainingServices: NewTrainingProvider) {
+    this.newTrainingServices.getTechnologies().subscribe((tech) => { this.technologies = tech });
+    this.NewForm = this.fb.group({
+      name: ["", [Validators.required]],
+      description: ["", Validators.required],
+      duration: [""],
+      Selectedtechnology: [""]
+    });
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddNewTrainingPage');
+  save(newTraining) {
+    this.newTrainingServices.addNewTraining(newTraining).subscribe((newTraining) => {
+      this.navCtrl.setRoot(NewTrainingPage);
+      return newTraining;
+    }, (error) => { console.error(error) });
   }
 
 }

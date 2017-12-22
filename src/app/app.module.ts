@@ -33,13 +33,14 @@ import { CampaignDetailPage } from '../pages/campaign-detail/campaign-detail';
 import { NewTrainingProvider } from '../providers/new-training/new-training';
 import { NewTrainingPage } from '../pages/new-training/new-training';
 import { AddNewTrainingPage } from '../pages/add-new-training/add-new-training';
-
+import { Network } from '@ionic-native/network';
+import { Toast } from '@ionic-native/toast';
 @NgModule({
   declarations: [MyApp, HomePage, ListPage, NewTrainingPage, AddNewTrainingPage, PostPage, ProductPage, TrainingPage, ProductDetailPage, BestSellerPage, TrainingDetailPage, HomeDetailPage, FilterModelPage, LoginPage, SignupPage, CampaignPage, AddCampaignPage, CampaignDetailPage],
   imports: [HttpClientModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, BrowserModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, NewTrainingPage, ListPage, AddNewTrainingPage, PostPage, ProductPage, TrainingPage, ProductDetailPage, BestSellerPage, TrainingDetailPage, HomeDetailPage, FilterModelPage, LoginPage, SignupPage, CampaignPage, AddCampaignPage, CampaignDetailPage],
   providers: [StatusBar, SplashScreen, { provide: ErrorHandler, useClass: IonicErrorHandler }, PostProvider, TodoService, ProductProvider, HomeProvider, TrainingProvider, AuthService, CampaignProvider,
-    NewTrainingProvider]
+    NewTrainingProvider, Network, Toast]
 })
 export class AppModule { }

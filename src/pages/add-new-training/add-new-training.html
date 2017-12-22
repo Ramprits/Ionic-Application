@@ -14,36 +14,35 @@
 
 
 <ion-content padding>
-  <form id="login-form1">
+  <form id="NewTraining-form" [formGroup]="NewForm" (ngSubmit)="save(NewForm.value)">
     <ion-item>
       <ion-label>
         Name
       </ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>
         Description
       </ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName="description"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>
         Duration
       </ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName="duration"></ion-input>
     </ion-item>
     <ion-item>
-      <label class="item item-select">
-        <span class="input-label">Select Technologies</span>
-        <select></select>
-      </label>
+      <ion-select formControlName="Selectedtechnology">
+        <ion-option *ngFor="let tech of technologies" [value]="tech.id">{{tech.name}}</ion-option>
+      </ion-select>
     </ion-item>
 
     <div class="spacer" style="height:40px;" id="loginspacer"></div>
-    <button id="login" type="submit" ion-button color="stable" block>
+    <button id="login" type="submit" ion-button color="stable" block [disabled]="!NewForm.valid">
       Save
     </button>
-
+    <pre>{{ NewForm.value | json }}</pre>
   </form>
 </ion-content>

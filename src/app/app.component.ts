@@ -10,6 +10,7 @@ import { BestSellerPage } from "../pages/best-seller/best-seller";
 import { LoginPage } from '../pages/login/login';
 import { CampaignPage } from '../pages/campaign/campaign';
 import { NewTrainingPage } from '../pages/new-training/new-training';
+import { Network } from '@ionic-native/network';
 
 @Component({
   templateUrl: "app.html"
@@ -22,10 +23,24 @@ export class MyApp {
   pages: Array<{ title: string; component: any }>;
 
   constructor(
+    private network: Network,
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
   ) {
+    let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+      console.log('network was disconnected :-(');
+    });
+    disconnectSubscription.unsubscribe();
+    let connectSubscription = this.network.onConnect().subscribe(() => {
+      console.log('network connected!');
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          console.log('we got a wifi connection, woohoo!');
+        }
+      }, 3000);
+      connectSubscription.unsubscribe();
+    });
     this.initializeApp();
     this.pages = [
       { title: "Dashboard", component: HomePage },
