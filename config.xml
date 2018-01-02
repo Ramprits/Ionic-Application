@@ -82,8 +82,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
     <plugin name="cordova-plugin-network-information" spec="^1.3.4" />
-    <engine name="android" spec="6.2.3" />
-    <engine name="ios" spec="4.5.4" />
     <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
     <plugin name="cordova-plugin-ionic" spec="^2.0.4">
         <variable name="APP_ID" value="43dc3be8" />
@@ -92,4 +90,6 @@
         <variable name="UPDATE_METHOD" value="background" />
         <variable name="MAX_STORE" value="2" />
     </plugin>
+    <engine name="android" spec="6.2.3" />
+    <engine name="ios" spec="4.5.4" />
 </widget>

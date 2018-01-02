@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewTrainingProvider } from '../../providers/new-training/new-training';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewTrainingPage } from '../new-training/new-training';
-import { Toast } from '@ionic-native/toast';
 
 @IonicPage()
 @Component({
@@ -15,7 +14,6 @@ export class AddNewTrainingPage {
   private NewForm: FormGroup;
   public msg = "";
   constructor(
-    private toastct: Toast,
     private fb: FormBuilder,
     public navCtrl: NavController,
     public navParams: NavParams,
